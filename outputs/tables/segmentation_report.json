@@ -1,0 +1,29 @@
+{
+  "chosen_k": 2,
+  "silhouette_scores": {
+    "2": 0.342,
+    "3": 0.331,
+    "4": 0.339
+  },
+  "segment_sizes": {
+    "High activity": 21,
+    "Low activity": 12
+  },
+  "segment_profile_means": {
+    "High activity": {
+      "avg_daily_steps": 9639.4,
+      "avg_sedentary_minutes": 871.6,
+      "avg_active_minutes": 283.5,
+      "avg_daily_calories": 2428.8,
+      "device_usage_days": 29.3
+    },
+    "Low activity": {
+      "avg_daily_steps": 4819.0,
+      "avg_sedentary_minutes": 1139.8,
+      "avg_active_minutes": 159.1,
+      "avg_daily_calories": 2163.7,
+      "device_usage_days": 27.1
+    }
+  },
+  "users_excluded_missing_features": 0
+}

@@ -1,0 +1,64 @@
+[
+  {
+    "label": "Steps vs. calories burned",
+    "x": "TotalSteps",
+    "y": "Calories",
+    "n": 868,
+    "pearson_r": 0.567,
+    "p_value": 4.1079998200081245e-75,
+    "significant_at_0.05": true,
+    "r_squared": 0.322
+  },
+  {
+    "label": "Steps vs. sleep duration",
+    "x": "TotalSteps",
+    "y": "TotalMinutesAsleep",
+    "n": 410,
+    "pearson_r": -0.19,
+    "p_value": 0.000105355807206669,
+    "significant_at_0.05": true,
+    "r_squared": 0.036
+  },
+  {
+    "label": "Sedentary minutes vs. sleep duration",
+    "x": "SedentaryMinutes",
+    "y": "TotalMinutesAsleep",
+    "n": 410,
+    "pearson_r": -0.601,
+    "p_value": 1.2521936864459167e-41,
+    "significant_at_0.05": true,
+    "r_squared": 0.361
+  },
+  {
+    "label": "Distance vs. calories burned",
+    "x": "TotalDistance",
+    "y": "Calories",
+    "n": 868,
+    "pearson_r": 0.628,
+    "p_value": 1.5472851171944593e-96,
+    "significant_at_0.05": true,
+    "r_squared": 0.395
+  },
+  {
+    "label": "Weekday vs. weekend steps",
+    "value_col": "TotalSteps",
+    "weekday_mean": 8288.9,
+    "weekend_mean": 8221.7,
+    "weekday_n": 643,
+    "weekend_n": 225,
+    "t_stat": 0.163,
+    "p_value": 0.8707826773041113,
+    "significant_at_0.05": false
+  },
+  {
+    "label": "Weekday vs. weekend sedentary minutes",
+    "value_col": "SedentaryMinutes",
+    "weekday_mean": 960.3,
+    "weekend_mean": 936.0,
+    "weekday_n": 643,
+    "weekend_n": 225,
+    "t_stat": 1.051,
+    "p_value": 0.2940939812030328,
+    "significant_at_0.05": false
+  }
+]

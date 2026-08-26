@@ -1,0 +1,3 @@
+segment,n_users,avg_daily_steps,avg_sedentary_minutes,avg_active_minutes,avg_daily_calories,avg_device_usage_days
+High activity,17,10363.3,861.6,284.7,2513.2,29.6
+Low activity,16,5254.9,1083.4,188.9,2140.3,27.3

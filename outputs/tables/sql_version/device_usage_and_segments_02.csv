@@ -1,0 +1,5 @@
+usage_frequency_tier,n_users
+Near-daily use (28-31 days),27
+Moderate use (11-20 days),3
+High use (21-27 days),2
+Low use (<=10 days),1

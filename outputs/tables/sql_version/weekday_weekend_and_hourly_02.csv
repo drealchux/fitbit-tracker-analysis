@@ -1,0 +1,8 @@
+day_of_week,avg_steps,avg_active_minutes,avg_sedentary_minutes,n_days
+Monday,8488.2,250.0,990.5,110
+Tuesday,8884.9,256.6,966.9,139
+Wednesday,8157.6,241.4,953.8,139
+Thursday,8064.1,236.1,919.5,135
+Friday,7820.6,248.2,978.3,120
+Saturday,8791.0,263.4,927.1,115
+Sunday,7626.6,229.3,945.3,110

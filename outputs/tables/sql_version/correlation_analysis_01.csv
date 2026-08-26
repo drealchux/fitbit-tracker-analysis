@@ -1,0 +1,5 @@
+label,n,pearson_r
+Steps vs. calories burned,868,0.567
+Steps vs. sleep duration,410,-0.19
+Sedentary minutes vs. sleep duration,410,-0.601
+Distance vs. calories burned,868,0.628

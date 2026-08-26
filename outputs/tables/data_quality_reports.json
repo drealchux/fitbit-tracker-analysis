@@ -1,0 +1,65 @@
+[
+  {
+    "table": "daily_activity",
+    "input_rows": 940,
+    "exact_duplicate_rows_dropped": 0,
+    "duplicate_id_date_rows_dropped": 0,
+    "rows_with_implausible_steps": 0,
+    "rows_with_implausible_calories": 5,
+    "rows_with_negative_values": 0,
+    "non_wear_days_flagged": 72,
+    "rows_with_minutes_over_1440": 0,
+    "output_rows": 940,
+    "unique_users": 33,
+    "date_min": "2016-04-12",
+    "date_max": "2016-05-12"
+  },
+  {
+    "table": "sleep_day",
+    "input_rows": 413,
+    "exact_duplicate_rows_dropped": 3,
+    "rows_with_implausible_sleep_minutes": 0,
+    "rows_time_in_bed_less_than_asleep": 0,
+    "multi_session_day_rows_before_aggregation": 46,
+    "output_rows": 410,
+    "unique_users": 24,
+    "date_min": "2016-04-12",
+    "date_max": "2016-05-12"
+  },
+  {
+    "table": "weight_log",
+    "input_rows": 67,
+    "exact_duplicate_rows_dropped": 0,
+    "missing_fat_pct": 97.0,
+    "output_rows": 67,
+    "unique_users": 8,
+    "manual_report_share_pct": 61.2
+  },
+  {
+    "table": "hourly_steps",
+    "input_rows": 22099,
+    "exact_duplicate_rows_dropped": 0,
+    "duplicate_id_hour_rows_dropped": 0,
+    "rows_with_negative_values": 0,
+    "output_rows": 22099,
+    "unique_users": 33
+  },
+  {
+    "table": "hourly_calories",
+    "input_rows": 22099,
+    "exact_duplicate_rows_dropped": 0,
+    "duplicate_id_hour_rows_dropped": 0,
+    "rows_with_negative_values": 0,
+    "output_rows": 22099,
+    "unique_users": 33
+  },
+  {
+    "table": "hourly_intensities",
+    "input_rows": 22099,
+    "exact_duplicate_rows_dropped": 0,
+    "duplicate_id_hour_rows_dropped": 0,
+    "rows_with_negative_values": 0,
+    "output_rows": 22099,
+    "unique_users": 33
+  }
+]
