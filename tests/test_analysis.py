@@ -1,12 +1,9 @@
 """Tests for src/bellabeat/analysis.py."""
 
 from __future__ import annotations
-
 import numpy as np
 import pandas as pd
-
 from bellabeat import analysis
-
 
 class TestDescribeNumeric:
     def test_reports_mean_median_and_skew(self):

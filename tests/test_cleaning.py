@@ -1,9 +1,7 @@
 """Tests for src/bellabeat/cleaning.py."""
 
 from __future__ import annotations
-
 from bellabeat import cleaning
-
 
 class TestCleanDailyActivity:
     def test_flags_non_wear_days(self, raw_daily_activity):
@@ -59,5 +57,4 @@ class TestCleanSleepDay:
 
 def pd_concat_first_row(df):
     import pandas as pd
-
     return pd.concat([df, df.iloc[[0]]], ignore_index=True)
