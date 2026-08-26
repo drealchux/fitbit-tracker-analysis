@@ -139,7 +139,7 @@ def plot_weekday_weekend_steps(weekday_profile: pd.DataFrame) -> Path:
     ax.set_title("Which days of the week show the highest activity?\nAverage steps by day of week")
     ax.set_xlabel("Day of week")
     ax.set_ylabel("Average total steps")
-    plt.setp(ax.get_xticklabels(), rotation=30, ha="right")
+    plt.setp(ax.get_xticklabels(), rotation=0, ha="center")
     return _save(fig, "weekday_weekend_steps.png")
 
 
@@ -155,6 +155,20 @@ def plot_hourly_activity_profile(hourly_profile: pd.DataFrame) -> Path:
     ax.set_xticks(range(0, 24, 2))
     ax.legend()
     return _save(fig, "hourly_activity_profile.png")
+
+
+def plot_activity_tier_distribution(tier_distribution: pd.DataFrame) -> Path:
+    labels = [label.replace(" (", "\n(") for label in tier_distribution["activity_tier"]]
+    fig, ax = plt.subplots(figsize=(10, 5))
+    ax.bar(labels, tier_distribution["pct"], color=PALETTE["primary"])
+    ax.set_title(
+        "How many user-days fall into each pedometer activity tier?\n"
+        "Tudor-Locke & Bassett (2004) step-count bands"
+    )
+    ax.set_xlabel("Activity tier (steps/day)")
+    ax.set_ylabel("Share of worn user-days (%)")
+    plt.setp(ax.get_xticklabels(), rotation=0, ha="center")
+    return _save(fig, "activity_tier_distribution.png")
 
 
 def plot_device_usage_frequency(user_summary: pd.DataFrame) -> Path:

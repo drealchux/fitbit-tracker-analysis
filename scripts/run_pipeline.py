@@ -129,6 +129,12 @@ def main() -> None:
     usage_tiers = analysis.device_usage_frequency(user_summary)
     write_csv(usage_tiers, "device_usage_tiers", config.TABLES_DIR)
 
+    activity_tier_days = analysis.activity_tier_distribution(worn_days)
+    write_csv(activity_tier_days, "activity_tier_distribution_days", config.TABLES_DIR)
+
+    activity_tier_users = analysis.activity_tier_distribution(user_summary)
+    write_csv(activity_tier_users, "activity_tier_distribution_users", config.TABLES_DIR)
+
     hourly_profile = analysis.hourly_activity_profile(hourly_usage)
     write_csv(hourly_profile, "hourly_activity_profile", config.TABLES_DIR)
 
@@ -152,7 +158,8 @@ def main() -> None:
     visualization.plot_hourly_activity_profile(hourly_profile)
     visualization.plot_device_usage_frequency(user_summary)
     visualization.plot_user_segments(segmented_users)
-    logger.info("Wrote 9 figures to %s", config.FIGURES_DIR)
+    visualization.plot_activity_tier_distribution(activity_tier_days)
+    logger.info("Wrote 10 figures to %s", config.FIGURES_DIR)
 
     # Data quality report (auto-generated, feeds docs/data_quality_report.md)
     with open(config.TABLES_DIR / "data_quality_reports.json", "w") as f:

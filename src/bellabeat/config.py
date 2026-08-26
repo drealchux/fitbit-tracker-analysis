@@ -63,9 +63,12 @@ RAW_FILES = {
 NON_WEAR_STEP_THRESHOLD = 0
 MINUTES_PER_DAY = 1440
 
-# CDC / WHO reference: 10,000 steps/day is a commonly cited public target,
-# though not a formal clinical guideline. Used here only to build
-# descriptive activity tiers, not as a medical claim.
+# Preliminary pedometer indices for healthy adults, from Tudor-Locke C,
+# Bassett DR Jr. "How many steps/day are enough? Preliminary pedometer
+# indices for public health." Sports Med. 2004;34(1):1-8. PMID 14715035.
+# The paper notes 10,000 steps/day is a popular media target rather than
+# an evidence-derived threshold, and proposes these five bands instead.
+# Used here only to build descriptive activity tiers, not as a medical claim.
 STEP_TIER_BINS = [-1, 5000, 7500, 10000, 12500, float("inf")]
 STEP_TIER_LABELS = [
     "Sedentary (<5,000)",

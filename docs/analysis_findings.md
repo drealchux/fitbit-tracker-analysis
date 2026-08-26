@@ -24,6 +24,34 @@ Computed over the 868 worn user-days (72 flagged non-wear days excluded; see dat
 
 **Interpretation:** the average user in this sample logs steps below the commonly cited 10,000-steps/day public-health reference point (mean 8,272; median 7,969), and spends more than half of every logged day (954 of ~1,440 minutes, 66%) sedentary. Sedentary minutes exceed active minutes by roughly 4 to 1.
 
+### 1.1 Pedometer activity tiers (Tudor-Locke & Bassett, 2004)
+
+Tudor-Locke C, Bassett DR Jr. "How many steps/day are enough? Preliminary pedometer indices for public health." *Sports Medicine*, 2004;34(1):1-8 (PMID 14715035) proposes five step-count bands for healthy adults, arguing that the popular 10,000-steps/day target is a media-driven heuristic rather than an evidence-derived clinical threshold. These bands (`config.STEP_TIER_BINS`/`STEP_TIER_LABELS`) are applied at both the day level and the user level.
+
+**By worn user-day (n=868):**
+
+| Tier | Days | % |
+|---|---:|---:|
+| Sedentary (<5,000) | 231 | 26.6% |
+| Low active (5,000-7,499) | 171 | 19.7% |
+| Somewhat active (7,500-9,999) | 163 | 18.8% |
+| Active (10,000-12,499) | 159 | 18.3% |
+| Highly active (12,500+) | 144 | 16.6% |
+
+**By user, on their per-user average (n=33):**
+
+| Tier | Users | % |
+|---|---:|---:|
+| Sedentary (<5,000) | 7 | 21.2% |
+| Low active (5,000-7,499) | 9 | 27.3% |
+| Somewhat active (7,500-9,999) | 10 | 30.3% |
+| Active (10,000-12,499) | 4 | 12.1% |
+| Highly active (12,500+) | 3 | 9.1% |
+
+See `activity_tier_distribution.png`. **Observation:** the day-level and user-level views tell related but different stories. At the day level, roughly 1 in 4 worn days (26.6%) falls in the "sedentary" band, but the remaining days are fairly evenly spread across the other four tiers -- a day-to-day mix rather than a population split into "active" and "inactive" people. At the user level, per-user averages cluster more heavily in the middle three tiers (77.9% of users average "low active" through "somewhat active"), and only 21.2% of users average into the two tiers above 10,000 steps/day. This is more granular than the earlier 36%/64% low/high k-means split (Section 6): it shows that even users in the "high activity" segment are not, on average, hitting the "active" (10,000+) band -- their higher average is mostly driven by fewer sedentary days and more time in the low/somewhat-active range, not by routinely exceeding 10,000 steps.
+
+**Business interpretation:** per Tudor-Locke & Bassett, individualized, incremental step-count goals relative to a user's own baseline are likely more actionable for this population than a universal "hit 10,000" message, since fewer than a quarter of users are averaging into that band and pushing everyone toward a single fixed target risks feeling unattainable to the majority.
+
 ## 2. How much do users sleep? (descriptive statistics)
 
 Computed over 410 logged sleep-nights from 24 of 33 users (9 users never logged sleep in this export).

@@ -51,6 +51,23 @@ class TestWeekdayWeekendTest:
         assert result["significant_at_0.05"] is True
 
 
+class TestActivityTierDistribution:
+    def test_counts_and_percentages_by_tier(self):
+        df = pd.DataFrame(
+            {
+                "activity_tier": pd.Categorical(
+                    ["Sedentary (<5,000)", "Sedentary (<5,000)", "Highly active (12,500+)", "Active (10,000-12,499)"],
+                    categories=analysis.config.STEP_TIER_LABELS,
+                )
+            }
+        )
+        result = analysis.activity_tier_distribution(df).set_index("activity_tier")
+        assert result.loc["Sedentary (<5,000)", "n"] == 2
+        assert result.loc["Sedentary (<5,000)", "pct"] == 50.0
+        assert result.loc["Low active (5,000-7,499)", "n"] == 0
+        assert result["n"].sum() == 4
+
+
 class TestDeviceUsageFrequency:
     def test_buckets_users_by_days_logged(self):
         df = pd.DataFrame({"Id": [1, 2, 3, 4], "device_usage_days": [5, 15, 25, 31]})

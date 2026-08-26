@@ -13,6 +13,8 @@ import numpy as np
 import pandas as pd
 from scipy import stats
 
+from . import config
+
 
 def describe_numeric(df: pd.DataFrame, columns: list[str]) -> pd.DataFrame:
     """Mean, median, std, min, max, and key percentiles for a set of columns.
@@ -112,6 +114,24 @@ def device_usage_frequency(user_summary: pd.DataFrame) -> pd.DataFrame:
     result["usage_frequency_tier"] = pd.cut(
         result["device_usage_days"], bins=bins, labels=labels
     )
+    return result
+
+
+def activity_tier_distribution(df: pd.DataFrame) -> pd.DataFrame:
+    """Count and share of rows in each Tudor-Locke & Bassett (2004) step tier.
+
+    Works on either a day-level table (e.g. worn user-days, one row per
+    user-day) or a user-level table (e.g. user_summary, one row per user)
+    as long as it carries an `activity_tier` column built from
+    config.STEP_TIER_BINS/LABELS (see transform.add_activity_derived_fields
+    and transform.build_user_summary). The two granularities answer
+    different questions -- "how many days were sedentary?" vs. "how many
+    users are, on average, sedentary?" -- so are reported separately
+    rather than combined.
+    """
+    counts = df["activity_tier"].value_counts().reindex(config.STEP_TIER_LABELS, fill_value=0)
+    result = counts.rename("n").rename_axis("activity_tier").reset_index()
+    result["pct"] = round(100 * result["n"] / result["n"].sum(), 1)
     return result
 
 
