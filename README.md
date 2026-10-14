@@ -453,6 +453,7 @@ Treat every finding as a **hypothesis to validate against Bellabeat's own custom
 | 3 | [`docs/analysis_findings.md`](docs/analysis_findings.md) | Analyze | Analysts: full statistics, test results, segmentation |
 | 4 | [`docs/data_quality_report.md`](docs/data_quality_report.md) | Prepare / Process | Analysts and reviewers: data selection, cleaning, limitations |
 | 5 | [`docs/CASESTUDY.md`](docs/CASESTUDY.md) | Ask | Original brief and stakeholders |
+| 6 | [`docs/process_walkthrough.md`](docs/process_walkthrough.md) | All | Anyone reproducing or reviewing the work: every step from Ask to Act, in order |
 | — | [`outputs/figures/`](outputs/figures/) | Share | Supporting charts referenced throughout |
 
 ---
